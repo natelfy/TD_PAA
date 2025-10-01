@@ -18,5 +18,25 @@ public final class MathsUtils {
         return res;
     }
 
-    
+    public static Complexe somme(Complexe c1, Complexe c2) {
+        if (c1 == null || c2 == null) {
+            throw new NullPointerException();
+        }
+        double reel = c1.getPartieReelle() + c2.getPartieReelle();
+        double im = c1.getPartieImaginaire() + c2.getPartieImaginaire();
+
+        return new Complexe(reel,im);
+    }
+
+    public static Complexe multiplication(Complexe c1, Complexe c2) {
+        if (c1 == null || c2 == null) {
+            throw new NullPointerException();
+        }
+        double re = c1.getPartieReelle() * c2.getPartieReelle();
+        double im = c1.getPartieImaginaire() + c2.getPartieImaginaire();
+        double ri = c1.getPartieReelle() * c2.getPartieImaginaire();
+        double ie = c1.getPartieImaginaire() * c2.getPartieReelle();
+
+        return new Complexe((re - im), (ri + ie));
+    }
 }
