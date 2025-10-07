@@ -19,4 +19,8 @@ public final class Disque {
         double d = this.centre.distance(r.centre);
         return d <= (this.rayon + r.rayon) + 1e-12;
     }
+
+    public Disque translate(Vecteur v) {
+        return new Disque(centre.translate(v), rayon);
+    }
 }

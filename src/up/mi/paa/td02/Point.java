@@ -16,4 +16,10 @@ public final class Point {
     public double distance(Point a) {
         return Math.hypot(a.abs - this.abs, a.ord - this.ord);
     }
+
+    public Point translate(Vecteur v) {
+        double dx = v.getB().getX() - v.getA().getX();
+        double dy = v.getB().getY() - v.getA().getY();
+        return new Point(this.abs + dx, this.ord + dy);
+    }
 }
